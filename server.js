@@ -1,33 +1,32 @@
-console.log("Web Serverni boshlash");
+console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
+const res = require("express/lib/response");
 const http = require("http");
 const fs = require("fs");
 
 let user;
-fs.readFile("database/user.json", "utf8", (err, data) => {
+fs.readFile("database/user.json", "utf-8", (err, data) => {
   if (err) {
     console.log("ERROR:", err);
   } else {
     user = JSON.parse(data);
   }
 });
-
-// 1: kirish code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// 1 Kirish code
+app.use(express.static("public")); // har qanday browserd kirib kelayotgan requestlar uchun public folder ochiq
+app.use(express.json()); // kirib kelayot json formatidagi data ni object holatiga ogirib beradi
+app.use(express.urlencoded({ extended: true })); // form dan qabul qilingan datalarni express qabul qiladi serverga kiritadi
 
 // 2: Session code
-
-// 3: view code
+// 3 Views code
 app.set("views", "views");
 app.set("view engine", "ejs");
 
-// 4: routing code
+// 4 Routing
 app.post("/create-item", (req, res) => {
-  console.log(req.body);
-  res.json({ test: "success" });
+  console.log(req);
+  res.json({ test: "succes" });
 });
 
 app.get("/", function (req, res) {
@@ -37,9 +36,8 @@ app.get("/", function (req, res) {
 app.get("/author", (req, res) => {
   res.render("author", { user: user });
 });
-
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The server is running successfully on port: ${PORT}`);
+  console.log(`The server is running on port ${PORT}`);
 });
