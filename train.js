@@ -81,27 +81,27 @@ async function run() {
 }
 run();
 
-// setInterval
+setInterval;
 
-// function maslahatBering(a, callback) {
-//   if (typeof a !== "number") callback("insert a number", null);
-//   else if (a <= 20) callback(null, list[0]);
-//   else if (a < 20 && a <= 30) callback(null, list[1]);
-//   else if (a < 30 && a <= 40) callback(null, list[2]);
-//   else if (a < 40 && a <= 50) callback(null, list[3]);
-//   else if (a < 50 && a <= 60) callback(null, list[4]);
-//   else {
-//     setInterval(function () {
-//       callback(null, list[5]);
-//     }, 1000);
-//   }
-// }
+function maslahatBering(a, callback) {
+  if (typeof a !== "number") callback("insert a number", null);
+  else if (a <= 20) callback(null, list[0]);
+  else if (a < 20 && a <= 30) callback(null, list[1]);
+  else if (a < 30 && a <= 40) callback(null, list[2]);
+  else if (a < 40 && a <= 50) callback(null, list[3]);
+  else if (a < 50 && a <= 60) callback(null, list[4]);
+  else {
+    setInterval(function () {
+      callback(null, list[5]);
+    }, 1000);
+  }
+}
 
-// console.log("passed here 0");
-// maslahatBering(25).then((data) => {
-//   if (err) console.log("error", err);
-//   else {
-//     console.log(data);
-//   }
-// });
-// console.log("passed here 1");
+console.log("passed here 0");
+maslahatBering(25).then((data) => {
+  if (err) console.log("error", err);
+  else {
+    console.log(data);
+  }
+});
+console.log("passed here 1");
