@@ -105,3 +105,33 @@ maslahatBering(25).then((data) => {
   }
 });
 console.log("passed here 1");
+
+// case 1
+
+function countLetter(e, word) {
+  let count = 0;
+  const char = word.split("");
+  char.map((c) => {
+    if (c === e) {
+      count++;
+    }
+  });
+  return count;
+}
+
+// case 2
+
+function countLetter1(e, word) {
+  let count = 0;
+  for (i = 0; i < word.length; i++) {
+    if (word[i] === e) {
+      count++;
+    }
+  }
+  return count;
+}
+const result = countLetter("e", "engineeringeeee");
+console.log("A-Task:", result);
+
+const result1 = countLetter1("e", "engineer");
+console.log("A-Task:", result1);
