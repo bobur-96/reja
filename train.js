@@ -32,19 +32,19 @@ Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda
 MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 */
 
-function countDigits(firstTest) {
-  let count = 0;
-  const letter = [...firstTest]; // spread ...
-  const letter1 = firstTest.split(""); // split('')
-  console.log("1", letter);
-  console.log("2", letter1);
-  letter.map((l) => {
-    if (!isNaN(l)) {
-      count++;
-    }
-  });
-  return count;
-}
+// function countDigits(firstTest) {
+//   let count = 0;
+//   const letter = [...firstTest]; // spread ...
+//   const letter1 = firstTest.split(""); // split('')
+//   console.log("1", letter);
+//   console.log("2", letter1);
+//   letter.map((l) => {
+//     if (!isNaN(l)) {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
 
 // const result = countDigits("ad2a54y79wet0sfgb9");
 // console.log("B-TASK:", result);
