@@ -1,3 +1,49 @@
+/* D-TASK: 
+
+Shunday class tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud! */
+
+const moment = require("moment");
+
+class shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+    this.time = moment().format("HH:mm");
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this.time} da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud.`
+    );
+  }
+
+  sotish(item, amount) {
+    if (this[item] >= amount) {
+      this[item] -= amount;
+      console.log(
+        `Hozir ${this.time} da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud. `
+      );
+    } else {
+      console.log(
+        `Hozir ${this.time} da ${amount} ta ${item} sotish imkoni yoq, yetarli emas.`
+      );
+    }
+  }
+
+  qabul(item, amount) {
+    this[item] += amount;
+    console.log(`Hozir ${this.time} da ${amount} ta ${item} qabul qilindi.`);
+  }
+}
+
+const shop = new shop(4, 5, 2);
+shop.qoldiq();
+shop.sotish("non", 3);
+shop.qabul("cola", 3);
+shop.qoldiq();
+
 // C-TASK:
 
 /*
@@ -5,26 +51,26 @@ Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala
 MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 */
 
-let checkContent = (mitgroup, groupmit) => {
-  // for (let mit of mitgroup) { // for of
-  //   console.log(mit);
-  // }
-  const str1 = [...mitgroup];
-  const str2 = [...groupmit];
-  const letter1 = str1.sort().join("");
-  console.log(letter1);
-  const letter2 = str2.sort().join("");
-  console.log(letter2);
-  return letter1 === letter2 ? true : false;
-  // if (letter1 === letter2) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-};
+// let checkContent = (mitgroup, groupmit) => {
+//   // for (let mit of mitgroup) { // for of
+//   //   console.log(mit);
+//   // }
+//   const str1 = [...mitgroup];
+//   const str2 = [...groupmit];
+//   const letter1 = str1.sort().join("");
+//   console.log(letter1);
+//   const letter2 = str2.sort().join("");
+//   console.log(letter2);
+//   return letter1 === letter2 ? true : false;
+//   // if (letter1 === letter2) {
+//   //   return true;
+//   // } else {
+//   //   return false;
+//   // }
+// };
 
-const result = checkContent("mitgroup", "gmtiprou");
-console.log("C-TASK:", result);
+// const result = checkContent("mitgroup", "gmtiprou");
+// console.log("C-TASK:", result);
 
 // B-TASK:
 /*
