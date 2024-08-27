@@ -5,7 +5,7 @@ MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta 
 
 const moment = require("moment");
 
-class shop {
+class Shop {
   constructor(non, lagmon, cola) {
     this.non = non;
     this.lagmon = lagmon;
@@ -38,10 +38,10 @@ class shop {
   }
 }
 
-const shop = new shop(4, 5, 2);
+const shop = new Shop(4, 5, 2);
 shop.qoldiq();
 shop.sotish("non", 3);
-shop.qabul("cola", 3);
+shop.qabul("cola", 4);
 shop.qoldiq();
 
 // C-TASK:
