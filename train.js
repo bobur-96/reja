@@ -1,25 +1,42 @@
+// G-TASK:
+
+// Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+// MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
+
+function getHighestIndex(arr) {
+  // eng katta qiymatni topamiz
+  let max_value = Math.max(...arr);
+  // birinchi uchragan indexni qaytaramiz
+  return arr.indexOf(max_value);
+}
+
+// Misol uchun
+let array = [5, 21, 12, 21, 8];
+let result = getHighestIndex(array);
+console.log(result); // 1 sonini qaytaradi
+
 // F-TASK:
 
 // Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
 // MASALAN: getReverse("hello") return true return qiladi
 
-function findDoublers(str) {
-  let natija = [];
-  const arr = str.split(""); // split("") => stringni elementga bo'lgan holda arrayga o'tykizib beradi.
-  for (let ele of arr) {
-    // for (let/const element of array) => arraydan qaytgan malumotni bitta bitta olib beradi.
-    if (natija.includes(ele)) {
-      return true;
-    } else {
-      natija.push(ele);
-      console.log(natija);
-    }
-  }
-  return false;
-}
+// function findDoublers(str) {
+//   let natija = [];
+//   const arr = str.split(""); // split("") => stringni elementga bo'lgan holda arrayga o'tykizib beradi.
+//   for (let ele of arr) {
+//     // for (let/const element of array) => arraydan qaytgan malumotni bitta bitta olib beradi.
+//     if (natija.includes(ele)) {
+//       return true;
+//     } else {
+//       natija.push(ele);
+//       console.log(natija);
+//     }
+//   }
+//   return false;
+// }
 
-let result = findDoublers("hello");
-console.log("F-TASK:", result);
+// let result = findDoublers("hello");
+// console.log("F-TASK:", result);
 
 // E-TASK:
 
